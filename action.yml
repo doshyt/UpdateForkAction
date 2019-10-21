@@ -1,12 +1,17 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'Update Fork Action'
+description: 'Updates your repo from the fork'
+author: 'doshyt'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  GithubToken:
+    description: 'Personal Access Token'
+  Origin:
+    description: 'Origin repo URL'
+  Upstream:
+    description: 'Upstream repo URL'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.GithubToken }}
+    - ${{ inputs.Origin }}
+    - ${{ inputs.Upstream }}
